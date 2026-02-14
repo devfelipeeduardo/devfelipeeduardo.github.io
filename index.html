@@ -6,6 +6,315 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
   <title>Meu portfólio</title>
+  <style>
+    /* Navegação */
+
+    nav.header {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      user-select: none;
+      background-color: var(--cinza-claro);
+      color: white;
+      width: 100%;
+      height: 100px;
+      padding: 5px;
+      box-shadow: 1px 0.22px 0.22px white;
+      z-index: 1;
+
+    }
+
+    nav .header-logo {
+      width: 240px;
+      height: 80px;
+      align-self: center;
+      padding-top: 5px;
+      padding-left: 85px;
+
+    }
+
+    nav ul.header-links {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      font-size: 25px;
+      padding-right: 80px;
+
+    }
+
+    nav ul a.header-link {
+      color: white;
+      padding-right: 50px;
+      font-weight: 500;
+      transition: opacity 300ms ease-in-out;
+
+    }
+
+    nav ul a.header-link:last-child {
+      padding-right: 4px;
+
+    }
+
+    nav ul span.li-initial {
+      font-weight: 600;
+
+
+    }
+
+    nav ul li.header-link:hover {
+      opacity: 0.8;
+      cursor: pointer;
+
+    }
+
+    nav div.links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+
+    /* Sobre */
+
+    section {
+      height: 100vh;
+
+    }
+
+    .main-section {
+      padding-top: 60px;
+
+
+    }
+
+    .introduction-div {
+      width: 95%;
+      padding-top: 100px;
+      margin-left: 5%;
+      color: whitesmoke;
+
+    }
+
+    .introduction-div h3 {
+      font-weight: 400;
+      font-size: 2.5rem;
+
+    }
+
+    .introduction-div h1 {
+      display: block;
+      font-size: 6rem;
+
+    }
+
+    .introduction-div h2 {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: white;
+      font-size: 6rem;
+      padding-bottom: 10px;
+
+    }
+
+    .introduction-div p {
+      display: block;
+      color: whitesmoke;
+      font-size: 1.5rem;
+      font-weight: 500;
+      width: 800px;
+      padding-bottom: 30px;
+
+    }
+
+    .introduction-div .button-about-me-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 50px;
+      border: 2px solid white;
+      border-radius: 5px 15px 15px 15px;
+      font-size: 1.4rem;
+      color: white;
+      cursor: pointer;
+      transition: transform 350ms ease-in;
+
+    }
+
+    .introduction-div .button-about-me-link:hover {
+      transform: scale(1.1);
+
+    }
+
+    .introduction-div .bg-image {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: 80px;
+      bottom: 50px;
+
+    }
+
+
+    /* Conhecimento */
+
+    .second-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+    }
+
+    .used-technologies-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 95%;
+      height: 100vh;
+      position: relative;
+
+    }
+
+    .used-technologies-div h1 {
+      display: block;
+      font-size: 8rem;
+
+    }
+
+    .used-technologies-div .technologies-images::before {
+      content: 'Clique em alguma das tecnologias';
+      position: absolute;
+      color: black;
+      top: -35px;
+      left: 1px;
+      z-index: 3;
+      font-size: 2rem;
+      font-weight: 600;
+
+    }
+
+    .used-technologies-div .technologies-images {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 1000px;
+      height: 250px;
+      border-radius: 3px 15px 15px 15px;
+      background: var(--cinza-claro);
+      z-index: 1;
+      color: white;
+      position: relative;
+
+    }
+
+
+    .used-technologies-div .technologies-image {
+      opacity: 1;
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      border: 5px solid black;
+      margin-right: 40px;
+      z-index: 2;
+      transition: opacity 500ms ease-in-out, transform 1s ease-in-out;
+      cursor: pointer;
+
+    }
+
+    .used-technologies-div .technologies-image:last-child {
+      margin-right: 0px;
+
+    }
+
+    .used-technologies-div .technology-description {
+      opacity: 0%;
+      position: absolute;
+      top: 50%;
+      left: 130px;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      z-index: 1;
+      max-width: 80%;
+      text-align: center;
+      transition: 500ms ease-in;
+
+    }
+
+    .used-technologies-div .back-choose-another {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 50px;
+      border-radius: 5px 15px 15px 15px;
+      border: 2px solid black;
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: 500;
+      transition: transform 350ms ease-in-out;
+
+    }
+
+    .used-technologies-div .back-choose-another:hover {
+      transform: scale(1.1);
+
+    }
+
+
+    /* Projetos */
+
+    .third-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+
+    }
+
+    .projects-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* justify-content: space-around; */
+      border-radius: 15px;
+
+    }
+
+    .projects-div h1 {
+      display: block;
+      font-size: 8rem;
+
+    }
+
+    .projects-div .projects-images {
+      width: 80rem;
+      height: 400px;
+      background: var(--yellow);
+
+    }
+
+
+    /* Contato */
+
+    .fourth-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--cinza-claro)
+
+    }
+
+    .contact-div h1 {
+      display: block;
+      font-size: 8rem;
+
+    }
+  </style>
 </head>
 
 <body>
@@ -59,17 +368,18 @@
   <section id="second-section" class="second-section white-bg">
     <div class="used-technologies-div">
       <h1><span>Tecnologias Utilizadas</h1>
-      <div id="technologies-images" class="technologies-images">
-        <img class="technologies-image" src="assets/imgs/technologies-imgs/html-css-js.png" alt="Html-css-js">
-        <img class="technologies-image" src="assets/imgs/technologies-imgs/aspnet.png" alt="ASP.NET">
-        <img class="technologies-image" src="assets/imgs/technologies-imgs/photoshop.png" alt="Photoshop">
-        <img class="technologies-image" src="assets/imgs/technologies-imgs/sqlserver.png" alt="SQLServer">
-        <p id="technology-description" class="technology-description">a</p>
+      <div id="technologies-images" class="technologies-images" onmouseleave="resetTechnology()">
+        <img class="technologies-image" src="assets/imgs/technologies-imgs/html-css-js.png" alt="Html-css-js" onclick="showTechnology(0)">
+        <img class="technologies-image" src="assets/imgs/technologies-imgs/aspnet.png" alt="ASP.NET" onclick="showTechnology(1)">
+        <img class="technologies-image" src="assets/imgs/technologies-imgs/photoshop.png" alt="Photoshop" onclick="showTechnology(2)">
+        <img class="technologies-image" src="assets/imgs/technologies-imgs/sqlserver.png" alt="SQLServer" onclick="showTechnology(3)">
+        <p id="technology-description" class="technology-description"></p>
       </div>
+      <div class="back-choose-another">Voltar</div>
     </div>
   </section>
 
-  
+
   <section id="third-section" class="third-section light-grey-bg">
     <div class="projects-div">
       <h1>Projetos</h1>
@@ -83,14 +393,62 @@
 
     </div>
   </section>
-  
+
   <section id="fourth-section" class="fourth-section white-bg">
     <div class="contact-div">
       <h1>Contato</h1>
     </div>
   </section>
-  
-  <script src="assets/script.js"></script>
+  <script>
+    // Textos das tecnologias
+  const technologyTexts = [
+    'Tenho base sólida em HTML, CSS e JavaScript. Sei estruturar páginas, criar layouts responsivos com Flexbox e Grid, aplicar animações e manipular o DOM para desenvolver interfaces modernas e interativas.',
+    
+    'Possuo experiência com ASP.NET e ASP.NET Core, criando aplicações web dinâmicas com Razor, Entity Framework, integração de APIs, autenticação e boas práticas para sistemas escaláveis e seguros.',
+    
+    'Tenho conhecimento em Photoshop para criação e edição de imagens, manipulação de camadas, ajustes de cor, tipografia e composição visual voltada para web e design gráfico.',
+    
+    'Tenho base em SQL Server, criando e gerenciando bancos de dados relacionais, escrevendo consultas otimizadas, trabalhando com relacionamentos, índices e garantindo integridade e segurança dos dados.'
+  ];
+
+
+    const translateValues = ['-50%', '-170%', '-290%', '-410%'];
+
+    function showTechnology(index) {
+      const container = document.getElementById('technologies-images');
+      const images = container.querySelectorAll('.technologies-image');
+      const description = document.getElementById('technology-description');
+
+      // Esconde todas as imagens
+      images.forEach((img, i) => {
+        img.style.opacity = '0%';
+        img.style.transform = 'translateX(0%)';
+      });
+
+      // Mostra apenas a imagem clicada com animação
+      images[index].style.opacity = '100%';
+      images[index].style.transform = `translateX(${translateValues[index]})`;
+
+      // Exibe a descrição
+      description.innerText = technologyTexts[index];
+      description.style.opacity = '100%';
+    }
+
+    function resetTechnology() {
+      const container = document.getElementById('technologies-images');
+      const images = container.querySelectorAll('.technologies-image');
+      const description = document.getElementById('technology-description');
+
+      // Restaura todas as imagens ao estado inicial
+      images.forEach((img) => {
+        img.style.opacity = '100%';
+        img.style.transform = 'translateX(0%)';
+      });
+
+      // Esconde a descrição
+      description.style.opacity = '0%';
+    }
+  </script>
 </body>
 
 </html>
